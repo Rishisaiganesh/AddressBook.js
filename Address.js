@@ -20,12 +20,7 @@ class AddressBook{
 
     }
      /// declaring Paremeters to string
-     toString() {
-        return "first Name: " + this.FirstName ,+ " last Name: " + this.lastName,
-          + "Address: " + this.Address + ", City: " + this.city,
-          + " State: " + this.State + "Pincode: " + this.PINCode ,
-          + " PhoneNumber: " + this.PhoneNumber ,+ " email: " + this.emailID;
-    }
+  
     ///Applying RegexFormet to First Name 
     get FirstName() { return this.FirstName; }
     set FirstName(firstName) {
@@ -78,7 +73,7 @@ class AddressBook{
       if (PINRegex.test(PINCode))
         this.PINCode = PINCode;
       else
-        throw "Invalid zip ";
+        throw "Invalid pincode ";
     }
     ///Applying Regex to Phone NUmber
     get PhoneNumber() { return this.PhoneNumber; }
@@ -98,4 +93,19 @@ class AddressBook{
       else
         throw "Invalid email";
     }
+    toString() {
+      return "first Name: " + this.FirstName ,+ " last Name: " + this.lastName,
+        + "Address: " + this.Address + ", City: " + this.city,
+        + " State: " + this.State + "Pincode: " + this.PINCode ,
+        + " PhoneNumber: " + this.PhoneNumber ,+ " email: " + this.emailID;
+  }
+}
+
+try{
+  let contactDetails = new AddressBook("Rishi","Saiganesh","RRComplex","Nellore","Andhrapradesh","524001","91 9898989898","dsdsr23@gmail.com");
+  console.log(contactDetails.toString());
+  
+} catch (error)
+{
+  console.log(error)
 }
